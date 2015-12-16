@@ -1,6 +1,6 @@
 # spectre-build
 
-Command line tool to build and run Spectre tests.
+Command line tool to build and run tests written using the [Spectre](https://github.com/kylef/Spectre) Swift BDD testing framework.
 
 ## Usage
 
@@ -8,7 +8,6 @@ Add the spectre-build dependency to your SPM Package.swift:
 
 ```swift
 import PackageDescription
-
 
 let package = Package(
   name: "Curassow",
@@ -28,7 +27,7 @@ Create some tests, and place them into the "Tests" directory:
 
 ```swift
 import Spectre
-
+import Person
 
 func describePerson() {
   describe("a person") {
@@ -58,13 +57,9 @@ Then simply build and run your tests:
 ```shell
 $ swift build
 $ .build/debug/spectre-build
--> HTTPParser
-  -> can parse a HTTP request body
-  -> reads the message body when Content-Length is present
-  -> throws an error when the client uses bad HTTP syntax
-  -> throws an error when the client uses a bad HTTP version
-  -> throws an error when the client disconnects before sending an HTTP request
-  -> throws an error when the client disconnects before sending the entire message body
+-> a person
+  -> has a name
+  -> returns the name as description
 
-6 passes and 0 failures
+2 passes and 0 failures
 ```
