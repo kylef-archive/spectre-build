@@ -10,7 +10,7 @@ Add the spectre-build dependency to your SPM Package.swift:
 import PackageDescription
 
 let package = Package(
-  name: "Curassow",
+  name: "Person",
   dependencies: [
     .Package(url: "https://github.com/kylef/spectre-build.git", majorVersion: 0),
   ]
