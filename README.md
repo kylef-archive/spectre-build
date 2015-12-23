@@ -4,20 +4,18 @@ Command line tool to build and run tests written using the [Spectre](https://git
 
 ## Usage
 
-Add the spectre-build dependency to your SPM Package.swift:
+Add the spectre-build dependency to your SPM test dependencies in Package.swift:
 
 ```swift
 import PackageDescription
 
 let package = Package(
   name: "Person",
-  dependencies: [
+  testDependencies: [
     .Package(url: "https://github.com/kylef/spectre-build.git", majorVersion: 0),
   ]
 )
 ```
-
-**NOTE**: *SPM does not yet offer proper test dependencies, but this is coming in [#74](https://github.com/apple/swift-package-manager/pull/74).*
 
 ### Test Files
 
