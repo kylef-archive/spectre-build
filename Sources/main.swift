@@ -9,6 +9,8 @@ private func target_specific_arguments() throws -> [String] {
     "-target", "x86_64-apple-macosx10.10",
     "-Xlinker", "-all_load",
   ]
+#elseif os(Linux)
+  return ["-Xlinker", "--no-whole-archive", "-lswiftGlibc"]
 #else
   return []
 #endif
