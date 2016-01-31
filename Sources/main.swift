@@ -18,7 +18,7 @@ private func target_specific_arguments() throws -> [String] {
 
 func build() throws {
   let libraries = Path.glob(".build/debug/*.a")
-  let testSources = Path.glob("Tests/*.swift").map { $0.description }
+  let testSources = (Path.glob("Tests/*.swift") + Path.glob("Tests/*/*.swift")).map { $0.description }
 
   let arguments = try target_specific_arguments() + [
     "-o", ".build/debug/spectre-runner",
